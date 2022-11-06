@@ -63,6 +63,8 @@ class Town:
             event.do_event(self)
         self.events = self.temp_events
         self.temp_events = []
+        for bold in self.kobolds:
+            bold.grow_older()
 
     '''adds text to the list of events to print.
     I am not quite sure of how to handle this, I probably need a more elegant way to make it look nice'''
@@ -79,16 +81,14 @@ class Town:
     event_texts = []
     resources = {"wood" : 0, "stone": 0}
 
-test_town = Town()
-for test_kobold in test_town.kobolds:
-    print(test_kobold)
-
-
 test_town_2 = Town()
-test_town_2.add_buildings()
+for test_kobold in test_town_2.kobolds:
+    print(test_kobold)
 test_town_2.construct_building(0)
 test_i = 0
 test_town_2.resolve_events()
+for test_kobold in test_town_2.kobolds:
+    print(test_kobold)
 print(test_town_2.resources)
 test_town_2.resolve_events()
 print(test_town_2.resources)

@@ -35,6 +35,9 @@ class Kobold:
         self.generate_stats()
         self.generate_colour()
 
+    def grow_older(self):
+        self.age += 1
+
     '''todo! make a way to initialize a kobold from breeding, store what parents a kobold has, change stats to a dict probably'''
 
     age = 0;
